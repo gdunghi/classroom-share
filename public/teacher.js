@@ -89,3 +89,10 @@ document.getElementById('copyStudentLink').addEventListener('click', async () =>
   btn.textContent = 'คัดลอกแล้ว';
   setTimeout(() => btn.textContent = old, 1200);
 });
+
+document.getElementById('resetReady').addEventListener('click', () => {
+  if (confirm('ต้องการรีเซ็ตสถานะความพร้อมของนักเรียนทุกคนหรือไม่?')) {
+    socket.emit('teacher-reset-ready', { roomId });
+  }
+});
+

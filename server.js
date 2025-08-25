@@ -110,6 +110,25 @@ io.on('connection', (socket) => {
     io.to(room.teacherId || '').emit('all-ready', allReady);
   });
 
+  // Teacher reset all students to unready
+  socket.on('teacher-reset-ready', ({ roomId }) => {
+    const room = rooms[roomId];
+    if (!room) return;
+    if (socket.id !== room.teacherId) return; // ตรวจสอบว่าเป็นครู
+
+    // รีเซ็ตทุก student ให้ยังไม่พร้อม
+    Object.values(room.students).forEach(s => { s.ready = false; });
+
+    // ส่งอัพเดทกลับไปหาครู
+    io.to(room.teacherId || '').emit('students-updated', room.students);
+    io.to(room.teacherId || '').emit('all-ready', false);
+
+    io.to(roomId).emit('reset-ready');
+  });
+
+
+
+
   // Clean up on disconnect
   socket.on('disconnect', () => {
     // find room containing this socket
@@ -128,6 +147,7 @@ io.on('connection', (socket) => {
     }
   });
 });
+
 
 const PORT = process.env.PORT || 3000;
 httpServer.listen(PORT, () => {

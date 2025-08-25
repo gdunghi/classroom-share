@@ -26,3 +26,7 @@ label { display: inline-flex; align-items: center; gap: .5rem; }
     border: 1px solid #1f2937;
 }
 .highlight { background: rgba(250, 204, 21, 0.35); }
+.button.danger {
+    background: #ef4444;
+    color: white;
+}
