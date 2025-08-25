@@ -1,0 +1,14 @@
+{
+  "name": "classroom-share",
+  "version": "1.0.0",
+  "description": "Classroom code sharing system (teacher & students) with readiness tracking and highlight sync.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}

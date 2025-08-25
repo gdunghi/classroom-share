@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Share</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Classroom Code Share</h1>
+    <p>ระบบแชร์โค้ดในห้องเรียน</p>
+    <a class="button" href="/teacher">➕ สร้างห้องสำหรับผู้สอน</a>
+    <div class="join">
+      <h2>เข้าห้องเรียน (นักเรียน)</h2>
+      <form id="joinForm">
+        <label>รหัสห้อง: <input id="roomId" required placeholder="เช่น ABC123" /></label>
+        <button type="submit" class="button">เข้าห้อง</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById('joinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = document.getElementById('roomId').value.trim();
+      if (id) window.location.href = '/student/' + encodeURIComponent(id);
+    });
+  </script>
+</body>
+</html>

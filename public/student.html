@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student | Classroom Share</title>
+  <link rel="stylesheet" href="/style.css" />
+  <!-- CodeMirror 5 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+
+    <!-- Language Modes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/shell/shell.min.js"></script>
+
+
+    <!-- CodeMirror Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/darcula.min.css" />
+
+
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      <strong>Room:</strong> <span id="roomLabel"></span>
+    </div>
+    <div>
+      <input id="displayName" placeholder="ชื่อนักเรียน" />
+      <button id="joinBtn" class="button small">เข้าชั้นเรียน</button>
+      <button id="readyBtn" class="button small secondary" disabled>ยังไม่พร้อม</button>
+    </div>
+  </div>
+  <div class="layout">
+    <div class="main full">
+      <textarea id="viewer" class="CodeMirror"></textarea>
+    </div>
+  </div>
+  <script src="/student.js"></script>
+</body>
+</html>
