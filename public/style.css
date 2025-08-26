@@ -30,3 +30,6 @@ label { display: inline-flex; align-items: center; gap: .5rem; }
     background: #ef4444;
     color: white;
 }
+.ml-10{
+    margin-left: 10px;
+}

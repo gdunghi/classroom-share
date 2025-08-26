@@ -27,16 +27,19 @@
         <strong>Room:</strong> <span id="roomLabel"></span>
     </div>
     <div>
-        <input id="displayName" placeholder="ชื่อนักเรียน"/>
-
-        <div id="studentDisplay">
-            <button id="joinBtn" class="button small">เข้าชั้นเรียน</button>
-        </div>
-       <div> <button id="readyBtn" class="button small secondary" disabled>กดเพื่อบอกว่าพร้อม</button></div>
+       <div >
+           <label for="displayName" id="studentName"></label>
+           <button id="readyBtn" class="button small secondary  ml-10" disabled>กดเพื่อบอกว่าพร้อม</button>
+       </div>
     </div>
+</div>
+<div id="studentRegister">
+    <label for="displayName"></label><input id="displayName" placeholder="ชื่อนักเรียน"/>
+    <button id="joinBtn" class="button small">เข้าชั้นเรียน</button>
 </div>
 <div class="layout" id="codeViewer">
     <div class="main full">
+
         <textarea id="viewer" class="CodeMirror"></textarea>
     </div>
 </div>

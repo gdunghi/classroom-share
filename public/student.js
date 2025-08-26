@@ -15,15 +15,17 @@ let nameInput = document.getElementById('displayName');
 let joinBtn = document.getElementById('joinBtn');
 let readyBtn = document.getElementById('readyBtn');
 let codeViewer = document.getElementById('codeViewer');
-let studentDisplay = document.getElementById('studentDisplay');
+let studentName = document.getElementById('studentName');
+let studentRegister= document.getElementById('studentRegister');
 let ready = false;
 let highlightMark = null;
 
 
 
-if(nameInput) {
+if(!nameInput.value) {
   codeViewer.style.visibility = "hidden";
-  studentDisplay.style.visibility = "visible";
+  readyBtn.style.visibility = "hidden";
+  studentRegister.style.visibility = "visible";
 }
 
 
@@ -43,7 +45,9 @@ joinBtn.addEventListener('click', () => {
   joinBtn.disabled = true;
   readyBtn.disabled = false;
   codeViewer.style.visibility = "visible";
-  studentDisplay.style.visibility = "hidden";
+  readyBtn.style.visibility = "visible";
+  studentRegister.style.visibility = "hidden";
+  studentName.innerText = "Hi, " + name + "!";
 });
 
 readyBtn.addEventListener('click', () => {
