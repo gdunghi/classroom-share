@@ -26,6 +26,7 @@ if(!nameInput.value) {
   codeViewer.style.visibility = "hidden";
   readyBtn.style.visibility = "hidden";
   studentRegister.style.visibility = "visible";
+  studentRegister.style.display = 'flex';
 }
 
 
@@ -46,7 +47,7 @@ joinBtn.addEventListener('click', () => {
   readyBtn.disabled = false;
   codeViewer.style.visibility = "visible";
   readyBtn.style.visibility = "visible";
-  studentRegister.style.visibility = "hidden";
+  studentRegister.style.display = 'none';
   studentName.innerText = "Hi, " + name + "!";
 });
 

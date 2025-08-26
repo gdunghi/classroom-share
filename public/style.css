@@ -33,3 +33,14 @@ label { display: inline-flex; align-items: center; gap: .5rem; }
 .ml-10{
     margin-left: 10px;
 }
+
+
+
+#studentRegister {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*gap: 12px;*/
+}
